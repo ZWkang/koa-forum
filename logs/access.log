@@ -1,0 +1,428 @@
+[2017-06-24 00:13:00.921] [INFO] koa-blog - POST /collection/hass - 27ms
+[2017-06-24 00:14:14.908] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:14:15.063] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:14:16.623] [INFO] koa-blog - POST /collection/hass - 18ms
+[2017-06-24 00:14:45.641] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:14:45.738] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:14:49.839] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:14:49.934] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:14:53.386] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:14:53.525] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:14:53.689] [INFO] koa-blog - POST /collection/hass - 5ms
+[2017-06-24 00:15:16.891] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:15:16.985] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:17:46.720] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:17:46.842] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:17:46.964] [INFO] koa-blog - POST /collection/hass - 8ms
+[2017-06-24 00:19:47.433] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:19:47.522] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:20:27.701] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:20:27.869] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:21:01.094] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:21:01.185] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:21:01.227] [INFO] koa-blog - POST /collection/hass - 4ms
+[2017-06-24 00:21:26.172] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:21:26.266] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:21:26.541] [INFO] koa-blog - POST /collection/hass - 11ms
+[2017-06-24 00:21:43.510] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:21:43.677] [INFO] koa-blog - POST /collection/hass - 7ms
+[2017-06-24 00:21:43.712] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:22:00.959] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:22:01.090] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:22:01.288] [INFO] koa-blog - POST /collection/hass - 10ms
+[2017-06-24 00:22:03.634] [INFO] koa-blog - POST /collection/hass - 2ms
+[2017-06-24 00:22:04.743] [INFO] koa-blog - POST /collection/hass - 2ms
+[2017-06-24 00:22:19.178] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:22:19.299] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:22:20.928] [INFO] koa-blog - POST /collection/hass - 13ms
+[2017-06-24 00:23:03.269] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:23:03.384] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:23:03.508] [INFO] koa-blog - POST /collection/hass - 48ms
+[2017-06-24 00:23:26.063] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:23:26.155] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:24:05.465] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:24:05.552] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 00:49:03.273] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 00:49:03.381] [INFO] koa-blog - MongoDB is ready
+[2017-06-24 22:24:27.446] [INFO] koa-blog - 邮箱功能启动
+[2017-06-24 22:24:27.607] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 13:00:46.364] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 13:00:47.419] [ERROR] koa-blog - connect error: { MongoError: failed to connect to server [127.0.0.1:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]
+    at Pool.<anonymous> (D:\大三下\node\simple-koa-project\koa-test\node_modules\_mongodb-core@2.1.11@mongodb-core\lib\topologies\server.js:328:35)
+    at emitOne (events.js:96:13)
+    at Pool.emit (events.js:191:7)
+    at Connection.<anonymous> (D:\大三下\node\simple-koa-project\koa-test\node_modules\_mongodb-core@2.1.11@mongodb-core\lib\connection\pool.js:280:12)
+    at Object.onceWrapper (events.js:293:19)
+    at emitTwo (events.js:106:13)
+    at Connection.emit (events.js:194:7)
+    at Socket.<anonymous> (D:\大三下\node\simple-koa-project\koa-test\node_modules\_mongodb-core@2.1.11@mongodb-core\lib\connection\connection.js:177:49)
+    at Object.onceWrapper (events.js:293:19)
+    at emitOne (events.js:96:13)
+    at Socket.emit (events.js:191:7)
+    at emitErrorNT (net.js:1283:8)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+  name: 'MongoError',
+  message: 'failed to connect to server [127.0.0.1:27017] on first connect [MongoError: connect ECONNREFUSED 127.0.0.1:27017]' }
+[2017-06-25 13:03:57.084] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 13:03:57.153] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 13:04:42.283] [INFO] koa-blog - POST /collection/hass - 3ms
+[2017-06-25 13:05:15.004] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 13:05:15.268] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 13:05:16.343] [INFO] koa-blog - POST /collection/hass - 3ms
+[2017-06-25 13:05:22.042] [INFO] koa-blog - POST /collection/hass - 1ms
+[2017-06-25 13:05:32.400] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 13:05:32.471] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 13:05:43.373] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 13:05:43.447] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 13:05:43.498] [INFO] koa-blog - POST /collection/hass - 3ms
+[2017-06-25 13:05:48.079] [INFO] koa-blog - POST /collection/hass - 0ms
+[2017-06-25 13:05:56.517] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 13:05:56.593] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 13:05:56.657] [INFO] koa-blog - POST /collection/hass - 3ms
+[2017-06-25 13:06:59.341] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 13:06:59.412] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 13:06:59.515] [INFO] koa-blog - POST /collection/hass - 2ms
+[2017-06-25 13:15:17.692] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 13:15:17.774] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 13:15:19.014] [INFO] koa-blog - POST /collection/hass - 6ms
+[2017-06-25 13:15:20.460] [INFO] koa-blog - POST /collection/hass - 1ms
+[2017-06-25 15:31:51.026] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 15:31:51.166] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 15:32:36.622] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 15:32:36.760] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 15:32:37.325] [INFO] koa-blog - POST /collection/hass - 4ms
+[2017-06-25 15:32:53.102] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 15:32:53.219] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 15:32:53.335] [INFO] koa-blog - POST /collection/hass - 3ms
+[2017-06-25 15:33:25.333] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 15:33:25.491] [INFO] koa-blog - POST /collection/hass - 3ms
+[2017-06-25 15:33:25.546] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 15:33:36.703] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 15:33:36.855] [INFO] koa-blog - POST /collection/hass - 4ms
+[2017-06-25 15:33:36.896] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 15:40:02.948] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 15:40:03.101] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 15:40:03.179] [INFO] koa-blog - POST /collection/hass - 16ms
+[2017-06-25 15:40:03.203] [INFO] koa-blog - GET / - 0ms
+[2017-06-25 16:27:36.555] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 16:27:36.637] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 16:27:50.792] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 16:27:50.857] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 16:27:51.116] [INFO] koa-blog - POST /collection/hass - 7ms
+[2017-06-25 16:27:51.137] [INFO] koa-blog - GET / - 0ms
+[2017-06-25 16:28:26.760] [INFO] koa-blog - POST /collection/hass - 1ms
+[2017-06-25 16:28:26.789] [INFO] koa-blog - GET / - 0ms
+[2017-06-25 16:28:36.867] [INFO] koa-blog - POST /collection/hass - 0ms
+[2017-06-25 16:28:36.886] [INFO] koa-blog - GET / - 0ms
+[2017-06-25 16:29:46.596] [INFO] koa-blog - POST /collection/hass - 0ms
+[2017-06-25 16:29:46.623] [INFO] koa-blog - GET / - 0ms
+[2017-06-25 16:30:48.236] [INFO] koa-blog - POST /collection/hass - 1ms
+[2017-06-25 16:30:48.262] [INFO] koa-blog - GET / - 0ms
+[2017-06-25 16:31:09.603] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 16:31:09.692] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 16:31:10.644] [INFO] koa-blog - POST /collection/hass - 7ms
+[2017-06-25 16:31:10.679] [INFO] koa-blog - GET / - 0ms
+[2017-06-25 16:31:30.596] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 16:31:30.668] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 16:31:30.792] [INFO] koa-blog - POST /collection/hass - 8ms
+[2017-06-25 16:31:30.815] [INFO] koa-blog - GET / - 1ms
+[2017-06-25 16:31:45.469] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 16:31:45.543] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 16:31:46.340] [INFO] koa-blog - GET /collection/hass - 6ms
+[2017-06-25 16:31:46.374] [INFO] koa-blog - GET / - 0ms
+[2017-06-25 16:32:21.835] [INFO] koa-blog - GET /collection/hass - 1ms
+[2017-06-25 16:32:21.871] [INFO] koa-blog - GET / - 0ms
+[2017-06-25 16:32:59.449] [INFO] koa-blog - GET /collection/hass - 0ms
+[2017-06-25 16:32:59.469] [INFO] koa-blog - GET / - 0ms
+[2017-06-25 16:33:06.523] [INFO] koa-blog - GET /collection/hass - 0ms
+[2017-06-25 16:33:06.548] [INFO] koa-blog - GET / - 0ms
+[2017-06-25 16:33:30.694] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 16:33:30.773] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 16:33:35.914] [INFO] koa-blog - GET /collection/test/a - 6ms
+[2017-06-25 16:33:35.967] [INFO] koa-blog - GET / - 0ms
+[2017-06-25 16:33:58.574] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 16:33:58.647] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 16:33:58.723] [INFO] koa-blog - GET /collection/test/a - 8ms
+[2017-06-25 16:34:56.448] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 16:35:11.209] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 16:35:11.300] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 16:35:12.823] [INFO] koa-blog - GET /collection/test/a - 5ms
+[2017-06-25 16:35:12.844] [INFO] koa-blog - GET /login - 1ms
+[2017-06-25 16:36:03.086] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 16:36:03.107] [INFO] koa-blog - GET /login - 0ms
+[2017-06-25 19:35:35.418] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:35:35.493] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:35:39.273] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:35:39.334] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:35:43.146] [INFO] koa-blog - GET /collection/test/a - 11ms
+[2017-06-25 19:35:52.038] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:35:52.130] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:35:52.159] [INFO] koa-blog - GET /collection/test/a - 8ms
+[2017-06-25 19:36:31.835] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:36:31.904] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:36:31.940] [INFO] koa-blog - GET /collection/test/a - 6ms
+[2017-06-25 19:36:38.999] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:36:39.068] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:36:39.107] [INFO] koa-blog - GET /collection/test/a - 6ms
+[2017-06-25 19:37:39.881] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:37:39.968] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:37:40.881] [INFO] koa-blog - GET /collection/test/a - 2ms
+[2017-06-25 19:37:46.778] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:37:46.837] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:37:47.165] [INFO] koa-blog - GET /collection/test/a - 2ms
+[2017-06-25 19:38:46.287] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 19:39:17.261] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 19:39:18.120] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 19:40:08.032] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 19:40:17.802] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 19:40:18.681] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 19:50:03.411] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:50:03.477] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:50:04.355] [INFO] koa-blog - GET /collection/test/a - 3ms
+[2017-06-25 19:50:16.055] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:50:16.125] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:50:16.536] [INFO] koa-blog - GET /collection/test/a - 3ms
+[2017-06-25 19:50:17.473] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 19:50:18.177] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 19:50:18.870] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 19:50:19.775] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 19:50:20.620] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 19:50:21.511] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 19:50:22.282] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 19:50:22.892] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 19:50:33.628] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:50:33.702] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:50:34.120] [INFO] koa-blog - GET /collection/test/a - 3ms
+[2017-06-25 19:50:35.051] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 19:50:35.740] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 19:50:39.735] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:50:39.804] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:50:39.838] [INFO] koa-blog - GET /collection/test/a - 2ms
+[2017-06-25 19:50:40.600] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 19:55:26.985] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:55:27.066] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:55:28.419] [INFO] koa-blog - GET /collection/test/a - 3ms
+[2017-06-25 19:57:12.335] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:57:12.411] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:57:12.826] [INFO] koa-blog - GET /collection/test/a - 3ms
+[2017-06-25 19:57:14.087] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 19:57:15.269] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 19:57:27.802] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 19:57:27.878] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 19:57:29.128] [INFO] koa-blog - GET /collection/test/a - 3ms
+[2017-06-25 19:57:30.032] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 19:59:58.186] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 20:01:48.100] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:01:48.168] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:02:00.550] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:02:00.627] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:02:00.695] [INFO] koa-blog - GET /collection/test/a - 3ms
+[2017-06-25 20:02:33.263] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:02:33.334] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:02:39.735] [INFO] koa-blog - GET /collection/test/a - 3ms
+[2017-06-25 20:03:17.843] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 20:03:18.987] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 20:04:33.542] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:04:33.607] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:04:34.491] [INFO] koa-blog - GET /collection/test/a - 4ms
+[2017-06-25 20:04:36.060] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 20:04:36.906] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 20:06:12.868] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 20:06:18.184] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 20:06:28.331] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 20:06:29.275] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 20:09:27.384] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 20:09:37.966] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:09:38.030] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:09:38.111] [INFO] koa-blog - GET /collection/test/a - 2ms
+[2017-06-25 20:09:54.370] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:09:54.435] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:09:54.620] [INFO] koa-blog - GET /collection/test/a - 2ms
+[2017-06-25 20:10:14.773] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:10:14.840] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:10:16.800] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:10:16.875] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:10:17.206] [INFO] koa-blog - GET /collection/test/a - 2ms
+[2017-06-25 20:10:30.203] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:10:30.277] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:10:30.370] [INFO] koa-blog - GET /collection/test/a - 4ms
+[2017-06-25 20:10:39.281] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:10:39.352] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:10:39.719] [INFO] koa-blog - GET /collection/test/a - 5ms
+[2017-06-25 20:10:40.595] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 20:11:28.662] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:11:28.743] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:11:28.888] [INFO] koa-blog - GET /collection/test/a - 4ms
+[2017-06-25 20:11:31.659] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 20:11:49.234] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:11:49.298] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:11:49.891] [INFO] koa-blog - GET /collection/test/a - 5ms
+[2017-06-25 20:12:25.585] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:12:25.661] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:12:28.483] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:12:28.559] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:12:29.873] [INFO] koa-blog - GET /collection/test/a - 4ms
+[2017-06-25 20:12:30.661] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 20:12:34.514] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:12:34.583] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:12:34.729] [INFO] koa-blog - GET /collection/test/a - 4ms
+[2017-06-25 20:12:36.628] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 20:12:40.761] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:12:40.826] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:12:40.877] [INFO] koa-blog - GET /collection/test/a - 3ms
+[2017-06-25 20:12:41.876] [INFO] koa-blog - GET /collection/test/a - 0ms
+[2017-06-25 20:13:01.089] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:13:01.166] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:13:01.496] [INFO] koa-blog - GET /collection/test/a - 5ms
+[2017-06-25 20:13:03.477] [INFO] koa-blog - GET /collection/test/a - 1ms
+[2017-06-25 20:14:55.583] [INFO] koa-blog - POST /collection/test/a - 1ms
+[2017-06-25 20:15:06.127] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:15:06.193] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:15:07.232] [INFO] koa-blog - POST /collection/test/a - 5ms
+[2017-06-25 20:15:18.140] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:15:18.218] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:15:18.539] [INFO] koa-blog - POST /collection/test/a - 4ms
+[2017-06-25 20:15:23.488] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:15:23.559] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:15:23.605] [INFO] koa-blog - POST /collection/test/a - 4ms
+[2017-06-25 20:15:53.765] [INFO] koa-blog - POST /collection/test/a - 2ms
+[2017-06-25 20:15:54.596] [INFO] koa-blog - POST /collection/test/a - 0ms
+[2017-06-25 20:16:05.323] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:16:05.434] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:16:05.651] [INFO] koa-blog - POST /collection/test/a - 3ms
+[2017-06-25 20:21:45.300] [INFO] koa-blog - POST /collection/test/a - 0ms
+[2017-06-25 20:40:12.231] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 20:40:12.313] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 20:40:12.533] [INFO] koa-blog - POST /collection/test/a - 3ms
+[2017-06-25 21:32:57.617] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 21:32:57.694] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 21:33:17.067] [INFO] koa-blog - POST /collection/test/a - 9ms
+[2017-06-25 21:33:39.839] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 21:33:39.905] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 21:33:41.134] [INFO] koa-blog - POST /collection/test/a - 4ms
+[2017-06-25 21:58:03.773] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 21:58:03.879] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 21:58:19.175] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 21:58:19.252] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 22:21:34.378] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 22:21:34.471] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 22:21:38.454] [INFO] koa-blog - POST /collection/test/a - 5ms
+[2017-06-25 22:21:50.213] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 22:21:50.288] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 22:21:50.921] [INFO] koa-blog - POST /collection/test/a - 5ms
+[2017-06-25 22:21:57.424] [INFO] koa-blog - POST /collection/test/a - 1ms
+[2017-06-25 22:52:54.117] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 22:52:54.274] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 22:52:54.313] [INFO] koa-blog - POST /collection/test/a - 10ms
+[2017-06-25 22:53:06.357] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 22:53:06.467] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 22:53:06.488] [INFO] koa-blog - POST /collection/test/a - 4ms
+[2017-06-25 22:53:33.006] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 22:53:33.125] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 22:53:33.166] [INFO] koa-blog - POST /collection/test/a - 3ms
+[2017-06-25 22:54:06.156] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 22:54:06.302] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 22:54:08.197] [INFO] koa-blog - POST /collection/test/a - 8ms
+[2017-06-25 22:55:54.120] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 22:55:54.249] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 22:55:56.633] [INFO] koa-blog - POST /collection/test/a - 4ms
+[2017-06-25 22:56:21.751] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 22:56:21.920] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 22:56:21.993] [INFO] koa-blog - POST /collection/test/a - 3ms
+[2017-06-25 22:56:24.694] [INFO] koa-blog - POST /collection/test/a - 0ms
+[2017-06-25 22:56:41.404] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 22:56:41.550] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 22:56:41.595] [INFO] koa-blog - POST /collection/test/a - 2ms
+[2017-06-25 22:56:47.683] [INFO] koa-blog - GET /collection/test/a - 2ms
+[2017-06-25 23:01:25.582] [INFO] koa-blog - GET /collection/ - 0ms
+[2017-06-25 23:01:32.207] [INFO] koa-blog - POST /collection/594b62c6ae653f43f4e8397e - 38ms
+[2017-06-25 23:02:15.827] [INFO] koa-blog - POST /collection/test/a - 0ms
+[2017-06-25 23:02:25.861] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:02:26.007] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:02:26.131] [INFO] koa-blog - POST /collection/test/a - 6ms
+[2017-06-25 23:02:38.106] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:02:38.267] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:02:39.338] [INFO] koa-blog - POST /collection/hass - 5ms
+[2017-06-25 23:02:56.462] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:02:56.593] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:02:56.743] [INFO] koa-blog - POST /collection/hass - 4ms
+[2017-06-25 23:03:08.002] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:03:08.109] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:03:08.233] [INFO] koa-blog - POST /collection/hass - 4ms
+[2017-06-25 23:03:14.167] [INFO] koa-blog - POST /collection/hass - 1ms
+[2017-06-25 23:05:45.636] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:05:45.772] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:05:55.686] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:05:55.808] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:06:10.228] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:06:10.375] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:06:20.606] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:06:20.751] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:06:20.832] [INFO] koa-blog - POST /collection/hass - 5ms
+[2017-06-25 23:06:29.780] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:06:29.914] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:15:17.861] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:15:17.977] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:15:18.140] [INFO] koa-blog - POST /collection/hass - 3ms
+[2017-06-25 23:15:30.660] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:15:30.787] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:15:30.989] [INFO] koa-blog - POST /collection/hass - 3ms
+[2017-06-25 23:15:52.697] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:15:52.862] [INFO] koa-blog - POST /collection/hass - 3ms
+[2017-06-25 23:15:52.910] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:16:04.403] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:16:04.587] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:28:50.753] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:28:50.921] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:28:52.226] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:28:52.298] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:28:55.206] [INFO] koa-blog - POST /collection/hass - 4ms
+[2017-06-25 23:43:42.405] [INFO] koa-blog - 邮箱功能启动
+[2017-06-25 23:43:42.477] [INFO] koa-blog - MongoDB is ready
+[2017-06-25 23:43:53.545] [INFO] koa-blog - POST /collection/hass - 5ms
+[2017-06-25 23:44:00.193] [INFO] koa-blog - HEAD /collection/hass - 18ms
+[2017-06-25 23:44:05.298] [INFO] koa-blog - HEAD /collection/hass - 4ms
+[2017-06-26 02:06:02.973] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:06:03.136] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:07:05.523] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:07:05.679] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:11:06.690] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:11:06.867] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:11:53.507] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:11:53.703] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:12:59.072] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:12:59.241] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:13:13.193] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:13:13.363] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:13:18.460] [INFO] koa-blog - POST /collection/hass - 11ms
+[2017-06-26 02:13:27.736] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:13:27.894] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:14:41.237] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:14:41.514] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:15:40.642] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:15:40.843] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:15:41.047] [INFO] koa-blog - POST /collection/hass - 6ms
+[2017-06-26 02:15:43.361] [INFO] koa-blog - POST /collection/hass - 1ms
+[2017-06-26 02:16:10.841] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:16:11.046] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:16:14.706] [INFO] koa-blog - POST /collection/hass - 10ms
+[2017-06-26 02:16:28.479] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:16:28.705] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:16:28.841] [INFO] koa-blog - POST /collection/hass - 8ms
+[2017-06-26 02:17:38.331] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:17:38.527] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:17:41.848] [INFO] koa-blog - POST /collection/hass - 14ms
+[2017-06-26 02:18:00.707] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:18:00.866] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:18:01.880] [INFO] koa-blog - POST /collection/hass - 7ms
+[2017-06-26 02:18:12.236] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:18:12.413] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:18:31.297] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 02:18:31.544] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 02:18:32.932] [INFO] koa-blog - POST /collection/hass - 9ms
+[2017-06-26 02:19:50.401] [INFO] koa-blog - POST /collection/hass - 1ms
+[2017-06-26 17:28:46.940] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 17:28:47.049] [INFO] koa-blog - MongoDB is ready
+[2017-06-26 17:28:50.936] [INFO] koa-blog - 邮箱功能启动
+[2017-06-26 17:28:51.027] [INFO] koa-blog - MongoDB is ready
