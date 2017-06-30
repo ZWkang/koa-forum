@@ -5,9 +5,24 @@ const collection = require('../controller/collection.js')
 
 router.prefix('/collection')
 // router.post('/test/a',collection.collectionwho)
-router.post('/hass',collection.collectionwho)
-router.post('/:id',collection.collectionAddAction)
-router.delete('/:id',collection.collectionCancelAction)
-router.get('/:id',collection.collectionShowAction)
 
+/**
+ * 测试接口
+ */
+router.post('/hass',collection.collectionwho)
+
+
+
+/**
+ * 添加收藏接口
+ */
+router.post('/:id',collection.collectionAddAction)
+/**
+ * 删除收藏记录接口
+ */
+router.delete('/:id',collection.collectionCancelAction)
+/**
+ * 获得收藏记录接口
+ */
+router.get('/:id',collection.collectionShowAction)
 module.exports=router

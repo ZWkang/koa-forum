@@ -79,6 +79,40 @@ let registerAction = async function(ctx,next){
 
 }
 
+let be_active = async function(ctx,next){
+
+    const body = ctx.request&&ctx.request.body
+    let active_value = body['active']||''
+    if(!active_value){
+        throw new TypeError('')
+        ctx.body = {
+            success:false,
+            errormessage:'active值为空'
+        }
+        return next();
+    }
+    let result
+    try{
+        result = await koauser.find({"user_active":active_value})
+        if(result.lengt<0||(result[0]&&result[0]["user_active"]!=='')||result[0]['user_active']!==active_value){
+            ctx.body = {
+                success:false,
+                errormessage:'active值有误'
+            }
+            return next()
+        }
+        userM.update({"user_active":active_value},{$set:{"user_active":''}})
+        ctx.body = {
+            success:true
+        }
+    }catch(e){
+         log.error(e)
+         return next();
+    }
+
+    return next()
+}
+
 module.exports={
     registerAction
 }
