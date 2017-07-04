@@ -6,7 +6,7 @@ let userM = require('../models/index.js').koauser;
 
 let collectionM = require('../models/index.js').collection;
 const jwt = require('../utils/token.js')
-const headerget = require('../utils/getheader.js')
+const jwtcheck = require('../utils/getheader.js')
 
 
 let articleGetAction = async function (ctx,next){
@@ -20,17 +20,13 @@ let articleGetAction = async function (ctx,next){
         }
     }
     let flag = false;
-    token = ctx.request.query['token'];
+    
+    token = ctx._tokens;
     // console.log(token)
     if(token){
-        try{
-            // console.log(token)
-            token = jwt.verify(token);
-            flag = true;
-            // console.log(token)
-        }catch(err){
-            flag = false;
-        }
+        flag = true
+    }else{
+        flag = true
     }
     let result = await articleM.findById(_id);
     result = JSON.parse(JSON.stringify(result))
@@ -95,19 +91,7 @@ let articlePostAction = async function (ctx,next){
     const body = ctx.request.body;
     // console.log(body)
     let token,userid,replyid;
-    try{
-        token = body['token'];
-        // console.log(token)
-        token = jwt.verify(token);
-        // console.log(token)
-    }catch(err){
-        // console.log(err)
-        log.error(err)
-        return ctx.response.status = 401;
-    }
-    if(!token){
-        return ctx.response.status = 401;
-    }
+    token = ctx._tokens
     // return ctx.body={'hahahah':'123'}
     let obj = {};
     // console.log(token._id)
@@ -125,7 +109,7 @@ let articlePostAction = async function (ctx,next){
     if( obj['article_title']===''||obj['article_content']===''){
         ctx.response.status=500;
     }
-    // console.log(obj['article_title'])
+
     try{
          ss= await articleM.create(obj)
         return ctx.body={
@@ -139,14 +123,11 @@ let articlePostAction = async function (ctx,next){
             errormessage: '新增失败'
         }
     }
-    // console.log(ss);
-    // let result = articlem.find({'arctile_title':obj['article_content'],'user_id':obj['user_id']})
 
     
 }
 let articleDeleteAction = async function (ctx,next){
     const body = ctx.request.headers;
-    // console.log(headers)
     const article_id = ctx.params.id||'';
     if(article_id===''){
         return ctx.body={
@@ -155,19 +136,8 @@ let articleDeleteAction = async function (ctx,next){
         }
     }
     let token,userid,replyid;
-    try{
-        token = body['authorization'];
-        // console.log(token)
-        token = jwt.verify(token);
-        // console.log(token)
-    }catch(err){
-        log.error(err)
-        return ctx.response.status = 401;
-    }
-    if(!token){
-        return ctx.response.status = 401;
-    }
-    // return ctx.body={'hahahah':'123'}
+    token = ctx._tokens
+
     try{
         let ss = await userM.findOne({'_id':token._id})
         let ee = await articleM.find({'_id':article_id,'user_id':token._id})
@@ -194,22 +164,8 @@ let articleDeleteAction = async function (ctx,next){
 }
 let articlePutAction = async function (ctx,next){
     const body = ctx.request.body;
-    // console.log(headers)
     let token,userid,replyid;
-    // console.log(body['token'])
-    try{
-        token = body['token'];
-        // console.log(token)
-        token = jwt.verify(token);
-        // console.log(token)
-    }catch(err){
-        // console.log(err)
-        return ctx.response.status = 401;
-    }
-    if(!token){
-        return ctx.response.status = 401;
-    }
-    // return ctx.body={'hahahah':'123'}
+    token = ctx._tokens
     let _id = ctx.params.id||'';
     if(_id===''){
         return ctx.body={
@@ -218,25 +174,35 @@ let articlePutAction = async function (ctx,next){
         }
     }
     
-    let obj = {};
-    obj['user_id'] = token._id;
-    obj['article_modifine_time'] = new Date().toLocaleString();
-    obj['arctile_title'] = ctx.request.body.title||'';
-    obj['article_content'] = ctx.request.body.content||'';
-    obj['article_tags'] = ctx.request.body.tags||[];
-    obj['tab'] = ctx.request.body.tab||'share';
-    obj['is_good'] = false;
-    obj['is_top'] = false;
+    
+
+    // let obj = {};
+    // obj['user_id'] = token._id;
+
+    // obj['article_modifine_time'] = new Date().toLocaleString();
+    // obj['arctile_title'] = ctx.request.body.title||'';
+    // obj['article_content'] = ctx.request.body.content||'';
+    // obj['article_tags'] = ctx.request.body.tags||[];
+    // obj['tab'] = ctx.request.body.tab||'share';
+    // obj['is_good'] = false;
+    // obj['is_top'] = false;
+    let obj = {
+        user_id:token._id,
+        article_modifine_time:new Date().toLocaleString(),
+        article_title:body.title||'',
+        article_content:body.content||'',
+        article_tags:body.tags||'',
+        tab:body.tab||'share',
+        is_good:false,
+        is_top:false
+    }
     let result
     let ss
-    // console.log(_id)
     try{
         result = await articleM.findOne({_id});
-        console.log(result)
         if(result['user_id']===obj['user_id']){
             ss= await articleM.update({'_id':_id},obj)
         }
-        
     }catch(e){
         // log.error(e)
         //    console.log(e)
@@ -245,8 +211,6 @@ let articlePutAction = async function (ctx,next){
             errormessage: '更新失败'
         }
     }
-    // console.log(ss);
-    // let result = articlem.find({'arctile_title':obj['article_content'],'user_id':obj['user_id']})
     return ctx.body={
         success:true,
         'topid':_id

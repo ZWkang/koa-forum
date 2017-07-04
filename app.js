@@ -14,6 +14,10 @@ const cors = require('kcors');
 
 const log = require('./utils/log.js')
 const jwt = require('jsonwebtoken')
+const jwtcheck = require('./utils/getheader')
+
+
+
 console.log(app)
 
 // error handler
@@ -44,6 +48,11 @@ app.use(async (ctx, next) => {
 //   secret: 'koa-test'
 // }));
 // routes
+app.use(jwtcheck({"forget":true}))
+// app.use(async (ctx, next) => {
+//   console.log(ctx._tokens)
+//   return next()
+// })
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(articles.routes(),articles.allowedMethods())

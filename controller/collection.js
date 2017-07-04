@@ -6,29 +6,14 @@ const jwt = require('../utils/token.js')
 
 let collectionAddAction = async function(ctx,next){
     const body = ctx.request.body;
-    // log.info(body)
     let token,userid,replyid;
-    // console.log(body['authorization'])
-    try{
-        token = body['authorization'];
-        // console.log(token)
-        token = jwt.verify(token);
-        // console.log(token)
-    }catch(err){
-        // console.log(err)
-        log.error(err)
-        return ctx.response.status = 401;
-    }
-    if(!token){
-        return ctx.response.status = 401;
-    }
-
+    token = ctx._tokens
     
-
+    
+    
     let article_id = ctx.params.id||'';
     try{
         let result = await articleM.find({'_id':article_id})
-        // console.log(result)
         if(result.length==0){
             return ctx.body={
                 success:false,
@@ -42,6 +27,7 @@ let collectionAddAction = async function(ctx,next){
             errormessage:'收藏失败'
         }
     }
+    
     let user_id = token._id
     let collect_time = new Date().toLocaleString();
     let obj = {
@@ -51,7 +37,7 @@ let collectionAddAction = async function(ctx,next){
     }
 
     
-
+    
     try{
         let colresu = await collection.find({article_id,user_id});
         if(colresu.length>0){
@@ -67,6 +53,7 @@ let collectionAddAction = async function(ctx,next){
         }
     }catch(e){
         log.error(e);
+        
         return ctx.body={
             success:false,
             errormessage:'收藏失败'
@@ -76,22 +63,10 @@ let collectionAddAction = async function(ctx,next){
 
 let collectionCancelAction = async function(ctx,next){
     const body = ctx.request.headers;
-    // log.info(body)
-    // console.log(123123)
+
     let token,userid,replyid;
     console.log(body['authorization'])
-    try{
-        token = body['authorization'];
-        // console.log(token)
-        token = jwt.verify(token);
-        // console.log(token)
-    }catch(err){
-        console.log(err)
-        return ctx.response.status = 401;
-    }
-    if(!token){
-        return ctx.response.status = 401;
-    }
+    token = ctx._tokens
 
 
 

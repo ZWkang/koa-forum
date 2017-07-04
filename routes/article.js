@@ -6,36 +6,37 @@ const star = require('../controller/star.js')
 
 router.prefix('/article')
 
+
+/**
+ * 获取文章信息
+ */
 router.get('/:id',article.articleGetAction)
 /**
- * @param authorization 登录后保存的token
- * @param :id 文章的article值
+ * 提交文章接口
  */
 router.post('/',article.articlePostAction)
+/**
+ * 更新文章接口
+ */
 router.put('/:id',article.articlePutAction)
 /**
- * @param authorization 登录后保存的token
- * @param :id 文章的article值
+ * 删除文章接口
  */
 router.delete('/:id',article.articleDeleteAction)
 /**
- * @param post authorization 登录后保存的token
- * @param :id 评论的id值
+ * 回复某一篇文章
  */
 
 router.post('/:id/reply',reply.replyAddAction)
 /**
- * @param post authorization 登录后保存的token
- * @param :id 评论的id值
+ * 删除某一条评论
  */
 router.delete('/reply/:id',reply.replyDeleteAction)
 
 
-// router.post('/:id/collect',collection.collectionAddAction);
-
-// router.delete('/:id/cancel_collect',collection.collectionCancelAction);
-
-//点赞
+/**
+ * 点赞某一条评论
+ */
 router.post('/star/:id/ups',star.starAction)
 
 

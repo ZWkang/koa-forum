@@ -22,7 +22,9 @@ router.post('/:id',collection.collectionAddAction)
  */
 router.delete('/:id',collection.collectionCancelAction)
 /**
- * 获得收藏记录接口
+ * 获得某个用户收藏记录接口
  */
 router.get('/:id',collection.collectionShowAction)
+
+
 module.exports=router

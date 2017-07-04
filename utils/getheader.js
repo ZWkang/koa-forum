@@ -5,6 +5,7 @@ let jwtcheck = function (opt){
     if(Object.prototype.toString.call(opt)!=='[object Object]'){
         throw new TypeError('you are enter a error type option')
     }
+    opt = opt||{}
     let str ;
     if(!!opt['forget']){
         str = '^/'
@@ -15,8 +16,8 @@ let jwtcheck = function (opt){
         const headers = ctx.request.headers
         let token
         const hostname = ctx.request.hostname
-        // console.log(ctx)
         let url = ctx.request.url
+        
         for (let i of route){
             if((new RegExp(str+i)).test(url)){
                 return next()
@@ -25,7 +26,7 @@ let jwtcheck = function (opt){
         try{
             token = headers['authorization']
             token = jwt.verify(token)
-            this._tokens = token
+            ctx._tokens = token
         }catch(err){
             ctx.response.status = 401;
             ctx.response.message = opt['message']||''
@@ -34,6 +35,7 @@ let jwtcheck = function (opt){
             ctx.response.status = 401
             ctx.response.message = opt['message']||''
         }
+        return next()
     }
 }
 module.exports = jwtcheck
