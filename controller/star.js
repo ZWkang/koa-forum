@@ -8,19 +8,8 @@ const starM = require('../models/index.js').star
 
 let starAction = async function(ctx,next){
     const body = ctx.request.body;
-    // console.log(headers)
     let token,userid,replyid;
-    try{
-        token = body['authorization'];
-        // console.log(token)
-        token = jwt.verify(token);
-        // console.log(token)
-    }catch(err){
-        return ctx.response.status = 401;
-    }
-    if(!token){
-        return ctx.response.status = 401;
-    }
+    token = ctx._tokens||''
 
     let reply_id = ctx.params.id||'';
     

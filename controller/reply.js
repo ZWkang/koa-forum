@@ -5,7 +5,7 @@ const jwt = require('../utils/token')
 
 let replyAddAction = async function(ctx,next){
     const body = ctx.request.body;
-    // console.log(headers)
+
     let token,userid,replyid;
     token = ctx._tokens
 
@@ -16,7 +16,6 @@ let replyAddAction = async function(ctx,next){
             errormessage:'参数错误'
         }
     }
-    
     let result = await articleM.find({article_id});
     if(result.length===0){
         ctx.body={
@@ -59,17 +58,7 @@ let replyDeleteAction = async function(ctx,next){
     const body = ctx.request.headers;
     // console.log(headers)
     let token,userid,replyid;
-    try{
-        token = body['authorization'];
-        // console.log(token)
-        token = jwt.verify(token);
-        // console.log(token)
-    }catch(err){
-        return ctx.response.status = 401;
-    }
-    if(!token){
-        return ctx.response.status = 401;
-    }
+    token = ctx._tokens||''
     let _id = ctx.params.id||'';
 
     if(_id===''){
@@ -106,7 +95,6 @@ let replyDeleteAction = async function(ctx,next){
         ss
     }
 }
-
 
 module.exports = {
     replyAddAction,

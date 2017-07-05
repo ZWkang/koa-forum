@@ -12,7 +12,7 @@ let indexShowAction = async function(ctx,next){
     let tab = query['tab']||'share';
     let limits = Number(query['limit'])||20;
     let usermsg
-    // console.log(tab)
+    
     try{
         let result 
         if(tab ==='all'){

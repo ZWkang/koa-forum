@@ -18,10 +18,6 @@ var mailOptions = {
     // html: `<h2>nodemailer基本使用:</h2><h3></a></h3>`
 };  
 
-// module.export={
-//     sending
-// }
-
 log.info('邮箱功能启动')
 module.exports={
     send: function(option){

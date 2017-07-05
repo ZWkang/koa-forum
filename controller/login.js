@@ -5,7 +5,7 @@ const jwt = require('../utils/token.js')
 //username
 //password
 let LoginAction = async function(ctx,next){
-    console.log('123213')
+    
     let user_name = ctx.request.body.username||''
     let user_password = ctx.request.body.password||''
     if(user_name==''||user_password==''){

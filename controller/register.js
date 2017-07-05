@@ -4,7 +4,6 @@ const crypto = require('crypto');
 const jwt = require('../utils/token.js')
 const sendmail = require('../mail/index.js')
 
-console.log(typeof koauser)
 
 let registerAction = async function(ctx,next){
     const user_name = ctx.request.body.username||''
@@ -18,9 +17,6 @@ let registerAction = async function(ctx,next){
         md5sum.update(user_name+'kangkang'+user_register_time);
         let user_active = md5sum.digest('hex');
 
-        // user.find({'user_email':iduser_email},function(err,doc){
-        //     console.log(doc);
-        // })
         let user_last_login_time = user_register_time;
         let obj = {
             'user_name':user_name,
@@ -32,19 +28,8 @@ let registerAction = async function(ctx,next){
             'is_admin':true
         }
 
-        // let test = new koauser(obj);
         var body = {};
-        // test.save((err,doc)=>{
-        //     // console.log('123')
-        //     if (err) {
-        //         console.log(123123123);
-        //         throw err;
-        //     }else{
-        //         body = {
-        //             success :true
-        //         }
-        //     }
-        // })
+
         sendmail.send({
                         'to':user_email,
                         'html':'<a href="http://172.16.144.40:8000/verifykey/?key'+user_active+'">点击此处验证邮箱</a>',
@@ -60,7 +45,7 @@ let registerAction = async function(ctx,next){
                 token:jwt.sign({'_id':ress._id})
             }
         }catch(e){
-            console.log(e)
+            log.error(e)
             return ctx.body = {
                 success:false,
                 errormessage: '注册失败'
@@ -69,7 +54,7 @@ let registerAction = async function(ctx,next){
 
 
     }catch(e){
-        console.log(e);
+        log.error(e)
         return ctx.body = {
             success:false,
             errormessage: '注册失败'
@@ -109,7 +94,6 @@ let be_active = async function(ctx,next){
          log.error(e)
          return next();
     }
-
     return next()
 }
 

@@ -11,7 +11,6 @@ const jwtcheck = require('../utils/getheader.js')
 
 let articleGetAction = async function (ctx,next){
     const body = ctx.request.body;
-    // console.log(headers)
     let token,userid,replyid;
     let _id = ctx.params.id||''
     if(_id==''){
@@ -22,7 +21,6 @@ let articleGetAction = async function (ctx,next){
     let flag = false;
     
     token = ctx._tokens;
-    // console.log(token)
     if(token){
         flag = true
     }else{
@@ -173,19 +171,6 @@ let articlePutAction = async function (ctx,next){
             errormessage: '参数错误'
         }
     }
-    
-    
-
-    // let obj = {};
-    // obj['user_id'] = token._id;
-
-    // obj['article_modifine_time'] = new Date().toLocaleString();
-    // obj['arctile_title'] = ctx.request.body.title||'';
-    // obj['article_content'] = ctx.request.body.content||'';
-    // obj['article_tags'] = ctx.request.body.tags||[];
-    // obj['tab'] = ctx.request.body.tab||'share';
-    // obj['is_good'] = false;
-    // obj['is_top'] = false;
     let obj = {
         user_id:token._id,
         article_modifine_time:new Date().toLocaleString(),
