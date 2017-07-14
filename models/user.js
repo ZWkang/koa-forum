@@ -1,5 +1,5 @@
 let mongoose = require('mongoose')
-// mongoose.Promise = global.Promise;
+
 let Schema = mongoose.Schema
 
 let userSchema = new Schema({

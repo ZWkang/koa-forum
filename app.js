@@ -44,24 +44,15 @@ app.use(async (ctx, next) => {
   const ms = new Date() - start
   log.info(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
-// app.use(jwt({
-//   secret: 'koa-test'
-// }));
-// routes
+
 app.use(jwtcheck({"forget":true}))
-// app.use(async (ctx, next) => {
-//   console.log(ctx._tokens)
-//   return next()
-// })
+
+
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(articles.routes(),articles.allowedMethods())
 app.use(collection.routes(),collection.allowedMethods())
-// const token = jwt.sign({
-//         uid: '123',
-//         name: 'kang',
-//         exp: Math.floor(Date.now() / 1000) + 24 * 60 * 60 //1 hours
-//       }, 'kang');
-// console.log(token)
-// console.log(jwt.verify(token,'kang'))
+
+
+
 module.exports = app

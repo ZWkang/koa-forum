@@ -9,14 +9,7 @@ log4js.configure({
       pattern: '-yyyy-MM-dd.log',
       alwaysIncludePattern: true,
       backups:3
-    },{
-      type: 'file', 
-      filename: LOG_PATH['error']||'logs/error.log', 
-      maxLogSize: 102400,
-      pattern: '-yyyy-MM-dd.log',
-      alwaysIncludePattern: true,
-      backups:3
-    },{ type: 'console' }
+    }
   ]
 })
 

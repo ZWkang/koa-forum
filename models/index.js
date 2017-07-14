@@ -6,6 +6,7 @@ let collection = require('./collection.js')
 let log = require('../utils/log.js')
 let mongoose = require('mongoose')
 let MONGDB_URL = require('../config/index.js')['MONGDB_URL']||'mongodb://127.0.0.1'
+
 mongoose.Promise = global.Promise;
 
 mongoose.connect(MONGDB_URL);
