@@ -1,22 +1,24 @@
 const log = require('../utils/log.js')
-let articleM = require('../models/index.js').article;
-let replyM = require('../models/index.js').reply;
-let starM = require('../models/index.js').star;
-let userM = require('../models/index.js').koauser;
+const articleM = require('../models/index.js').article;
+const replyM = require('../models/index.js').reply;
+const starM = require('../models/index.js').star;
+const userM = require('../models/index.js').koauser;
 
-let collectionM = require('../models/index.js').collection;
+const collectionM = require('../models/index.js').collection;
 const jwt = require('../utils/token.js')
 const jwtcheck = require('../utils/getheader.js')
 
 
-let articleGetAction = async function (ctx,next){
+const articleGetAction = async function (ctx,next){
     const body = ctx.request.body;
     let token,userid,replyid;
     let _id = ctx.params.id||''
     if(_id==''){
-        return ctx.body={
-            success:false
-        }
+        // return ctx.body={
+        //     success:false
+        // }
+        log.info('params id is null')
+        return ctx.throw(400,'params id is null')
     }
     let flag = false;
     
@@ -29,24 +31,20 @@ let articleGetAction = async function (ctx,next){
     let result = await articleM.findById(_id);
     result = JSON.parse(JSON.stringify(result))
     let replies ;
-    // const body = ctx.request.body;
     try{
         if(result.length!==0){
             await articleM.update({_id},{$inc:{"acticle_read_times":1}})
             replies = await replyM.find({'article_id':_id}).sort({'reply_time':1}).exec()
-            // console.log(result['user_id'])
+            
             let cache = await userM.findOne({'_id':result['user_id']},{'user_name':1})
-            // result['author_name'] = cache['user_name']
+            
             
             result['author_name'] = cache['user_name']
-            // console.log(result)
+            
             replies = JSON.parse(JSON.stringify(replies))
-            // console.log(result)
+            
             for(let i=0;i<replies.length;i++){
-                
-                let cache = await userM.findOne({'_id':replies[i]['user_id']},{'user_name':1})
-                // result['author_name'] = cache['user_name']
-                
+                let cache = await userM.findOne({'_id':replies[i]['user_id']},{'user_name':1})     
                 replies[i]['author_name'] = cache['user_name']
             }
         }

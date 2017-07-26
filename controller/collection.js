@@ -8,17 +8,16 @@ let collectionAddAction = async function(ctx,next){
     const body = ctx.request.body;
     let token,userid,replyid;
     token = ctx._tokens
-    
-    
-    
+
     let article_id = ctx.params.id||'';
+    console.log(article_id)
     try{
         let result = await articleM.find({'_id':article_id})
         if(result.length==0){
-            return ctx.body={
-                success:false,
-                errormessage:'目标文章不存在'
-            }
+            // return ctx.body={
+            //     success:false,
+            //     errormessage:'目标文章不存在'
+            // }
         }
     }catch(e){
         log.error(e);
@@ -41,23 +40,27 @@ let collectionAddAction = async function(ctx,next){
     try{
         let colresu = await collection.find({article_id,user_id});
         if(colresu.length>0){
-            return ctx.body = {
-                success:false,
-                errormessage:'已经收藏了'
-            }
+            // ctx.status = 400
+            // ctx.body = {
+            //     success:false,
+            //     errormessage:'已经收藏了'
+            // }
+            return ctx.throw(400,'eror')
         }
         let suc = await collection.create(obj);
         
         return ctx.body={
-            success:true
+            success:true,
+            message:'收藏成功'
         }
     }catch(e){
         log.error(e);
         
-        return ctx.body={
-            success:false,
-            errormessage:'收藏失败'
-        }
+        // return ctx.body={
+        //     success:false,
+        //     errormessage:'收藏失败'
+        // }
+        return ctx.throw(400,'收藏失败')
     }
 }
 
