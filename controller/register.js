@@ -69,12 +69,10 @@ let be_active = async function(ctx,next){
     const body = ctx.request&&ctx.request.body
     let active_value = body['active']||''
     if(!active_value){
-        throw new TypeError('')
-        ctx.body = {
+        return ctx.body = {
             success:false,
             errormessage:'active值为空'
         }
-        return next();
     }
     let result
     try{

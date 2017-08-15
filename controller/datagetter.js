@@ -5,6 +5,10 @@ let replyM = require('../models/index.js').reply;
 const jwt = require('../utils/token.js')
 const headerget = require('../utils/getheader.js')
 
+let logwrap = function(...arg){
+    log.info(arguments.callee.name+arg)
+}
+
 let indexShowAction = async function(ctx,next){
     const query = ctx.request.query;
     
@@ -16,7 +20,6 @@ let indexShowAction = async function(ctx,next){
     try{
         let result 
         if(tab ==='all'){
-            // console.log(tab)
             result = await articleM.find({}).skip((page-1)*limits).limit(limits)
         }else if(tab==='good'){
             result = await articleM.find({'is_good':true}).skip((page-1)*limits).limit(limits)
@@ -29,6 +32,7 @@ let indexShowAction = async function(ctx,next){
             // console.log(usermsg)
             result[i]['user_name'] = usermsg['user_name']
         }
+        logwrap('articleGetAction params id is null')
         return ctx.body={
             success:true,
             result:result
@@ -65,19 +69,19 @@ let goodtoArticle = async function(ctx,next){
     const body = ctx.request.body;
     // console.log(headers)
     let token,userid,replyid;
-    try{
-        token = body['token'];
-        // console.log(token)
-        token = jwt.verify(token);
-        // console.log(token)
-        console.log(token)
-    }catch(err){
-        return ctx.response.status = 401;
-    }
-    if(!token){
-        return ctx.response.status = 401;
-    }
-
+    // try{
+    //     token = body['token'];
+    //     // console.log(token)
+    //     token = jwt.verify(token);
+    //     // console.log(token)
+    //     console.log(token)
+    // }catch(err){
+    //     return ctx.response.status = 401;
+    // }
+    // if(!token){
+    //     return ctx.response.status = 401;
+    // }
+    token = ctx._token;
     let param = ctx.params.id||''
     
     let ss
@@ -159,12 +163,12 @@ let userinfo = async function(ctx,next){
         }
     }
     try {
-        let result = await userM.findOne({'_id':user_id})
+        let result = await userM.findOne({'_id':user_id},{'user_name':1,'user_email':1,'user_register_time':1,'is_admin':1})
         result = JSON.parse(JSON.stringify(result))
-        let ss = await articleM.find({'user_id':user_id});
-        result['article'] = ss||[];
-        ss = await replyM.find({'user_id':user_id})
-        result['replies'] = ss||[];
+        let articleResult = await articleM.find({'user_id':user_id});
+        result['article'] = articleResult||[];
+        let replyResult = await replyM.find({'user_id':user_id})
+        result['replies'] = replyResult||[];
         return ctx.body={
             success:true,
             result

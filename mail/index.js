@@ -1,5 +1,5 @@
-let nodemailer = require('nodemailer')
-let log = require('../utils/log.js')
+const nodemailer = require('nodemailer')
+const log = require('../utils/log.js')
 let emailoption = {
   service: 'Gmail',  
   auth: {  
@@ -29,9 +29,8 @@ module.exports={
 
         transporter.sendMail(option, function (err, info) {  
             if (err) {  
-                throw new TypeError(err);
                 log.error((new Date).toUpperCase()+'发送失败')
-                return;
+                throw new TypeError(err);
             }
             log.info('验证发送成功');  
         });

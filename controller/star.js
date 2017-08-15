@@ -1,26 +1,25 @@
 const log = require('../utils/log.js')
 const Star = require('../controller/star.js')
 const jwt = require('../utils/token.js')
-
 const replyM = require('../models/index.js').reply
-
 const starM = require('../models/index.js').star
 
 let starAction = async function(ctx,next){
     const body = ctx.request.body;
-    let token,userid,replyid;
+    let token;
     token = ctx._tokens||''
-
     let reply_id = ctx.params.id||'';
-    
     let user_id = token._id;
     let star_time = new Date().toLocaleString();
 
+
     if(reply_id===''){
-        return ctx.body={
-            success:false
-        }
+        // return ctx.body={
+        //     success:false
+        // }
+        return ctx.throw(400,`reply_id is null`);
     }
+    
     let obj = {
         reply_id,
         user_id,
@@ -45,13 +44,11 @@ let starAction = async function(ctx,next){
                     "action":"up" 
                 }
             }
+        }else{
+            throw new Error('is not a id')
         }
-
     }catch(e){
-        return ctx.body={
-            success:false,
-            errormessage:'点赞失败'
-        }
+        return ctx.throw(400,'点赞失败')
     }
 }
 

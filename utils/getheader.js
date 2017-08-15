@@ -40,14 +40,15 @@ let jwtcheck = function (opt){
         }catch(err){
             ctx.response.status = 401;
             ctx.response.message = opt['message']||''
-            return next()
         }
         if(!token){
             ctx.response.status = 401
             ctx.response.message = opt['message']||''
+        }else{
+            return next()
         }
 
-        return next()
+        
     }
 }
 module.exports = jwtcheck

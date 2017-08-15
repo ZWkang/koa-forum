@@ -1,7 +1,9 @@
 let route = [
 	'users/register',
 	'users/info*',
-	'users/login'
+	'users/login',
+	'list',
+	'*'
 ]
 
 module.exports = route

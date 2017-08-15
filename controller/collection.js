@@ -10,7 +10,7 @@ let collectionAddAction = async function(ctx,next){
     token = ctx._tokens
 
     let article_id = ctx.params.id||'';
-    console.log(article_id)
+    // console.log(article_id)
     try{
         let result = await articleM.find({'_id':article_id})
         if(result.length==0){
@@ -18,6 +18,7 @@ let collectionAddAction = async function(ctx,next){
             //     success:false,
             //     errormessage:'目标文章不存在'
             // }
+            return ctx.throw(400,`目标文章不存在`)
         }
     }catch(e){
         log.error(e);
@@ -68,15 +69,15 @@ let collectionCancelAction = async function(ctx,next){
     const body = ctx.request.headers;
 
     let token,userid,replyid;
-    console.log(body['authorization'])
+    // console.log(body['authorization'])
     token = ctx._tokens
 
 
 
     let article_id = ctx.params.id||'';
     try{
-        let result = await articleM.find({'_id':article_id})
-        if(result.length==0){
+        let articleResult = await articleM.find({'_id':article_id})
+        if(articleResult.length==0){
             return ctx.body={
                 success:false,
                 errormessage:'目标文章不存在'
@@ -95,12 +96,13 @@ let collectionCancelAction = async function(ctx,next){
         user_id
     }
     try{
-        let suc = await collection.remove(obj);
-        if(suc['result']['ok']&&suc['result']['n']){
+        let removeSuccessStatus = await collection.remove(obj);
+        if(removeSuccessStatus['result']['ok']&&removeSuccessStatus['result']['n']){
             return ctx.body={
                 success:true
             }
         }
+
         return ctx.body={
             success:false
         }
@@ -133,17 +135,17 @@ let collectionShowAction = async function(ctx,next){
     // let _id = token._id;
     let _id = ctx.params.id||'';
     try {
-        let result = await collection.find({'user_id': _id});
-        result = JSON.parse(JSON.stringify(result));
+        let collectionResult = await collection.find({'user_id': _id});
+        collectionResult = JSON.parse(JSON.stringify(collectionResult));
         let ss
         
-        for(let i=0;i<result.length;i++){
-            result[i]['articlemsg'] = await articleM.find({'_id':result[i]['article_id']})
+        for(let i=0;i<collectionResult.length;i++){
+            collectionResult[i]['articlemsg'] = await articleM.find({'_id':collectionResult[i]['article_id']})
         }
         
         return ctx.body = {
             success:true,
-            result
+            collectionResult
         }
         
     } catch (error) {

@@ -11,14 +11,14 @@ const users = require('./routes/users')
 const articles = require('./routes/article')
 const collection = require('./routes/collect')
 const cors = require('kcors');
-
+const handler = require('./utils/hanlerError')
 const log = require('./utils/log.js')
 const jwt = require('jsonwebtoken')
 const jwtcheck = require('./utils/getheader')
 
 
 
-console.log(app)
+
 
 // error handler
 onerror(app)
@@ -44,7 +44,7 @@ app.use(async (ctx, next) => {
   const ms = new Date() - start
   log.info(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
-
+app.use(handler())
 app.use(jwtcheck({"forget":true}))
 
 

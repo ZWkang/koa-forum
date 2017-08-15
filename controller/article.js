@@ -8,6 +8,10 @@ const collectionM = require('../models/index.js').collection;
 const jwt = require('../utils/token.js')
 const jwtcheck = require('../utils/getheader.js')
 
+let logwrap = function(...arg){
+    log.info(arguments.callee.name+arg)
+}
+
 
 const articleGetAction = async function (ctx,next){
     const body = ctx.request.body;
@@ -17,43 +21,48 @@ const articleGetAction = async function (ctx,next){
         // return ctx.body={
         //     success:false
         // }
-        log.info('params id is null')
+        log.info('articleGetAction params id is null')
         return ctx.throw(400,'params id is null')
     }
+    
     let flag = false;
     
     token = ctx._tokens;
     if(token){
         flag = true
-    }else{
-        flag = true
     }
-    let result = await articleM.findById(_id);
-    result = JSON.parse(JSON.stringify(result))
-    let replies ;
+
+
     try{
+        let result = await articleM.findById(_id);
+        result = JSON.parse(JSON.stringify(result))
+
+        let replies ;
         if(result.length!==0){
+            
             await articleM.update({_id},{$inc:{"acticle_read_times":1}})
+
             replies = await replyM.find({'article_id':_id}).sort({'reply_time':1}).exec()
             
             let cache = await userM.findOne({'_id':result['user_id']},{'user_name':1})
             
-            
             result['author_name'] = cache['user_name']
             
             replies = JSON.parse(JSON.stringify(replies))
-            
-            for(let i=0;i<replies.length;i++){
+            let temp_len = replies.length
+            for(let i=0;i<temp_len;i++){
                 let cache = await userM.findOne({'_id':replies[i]['user_id']},{'user_name':1})     
                 replies[i]['author_name'] = cache['user_name']
             }
         }
+
         replies = JSON.parse(JSON.stringify(replies))
         result = JSON.parse(JSON.stringify(result))
+        
         if(flag){
             for(let i = 0;i<replies.length;i++){
-                let ss = await starM.find({'_id':replies[i]['_id'],'user_id':token._id})
-                if(ss.length !=0){
+                let selfResult = await starM.find({'_id':replies[i]['_id'],'user_id':token._id})
+                if(selfResult.length !=0){
                     replies[i]['is_uped'] = true;
                 }else{
                     replies[i]['is_uped'] = false;
@@ -69,9 +78,10 @@ const articleGetAction = async function (ctx,next){
     // console.log(replies)
     }catch(e){
         log.error(e);
-        return ctx.body={
-            success:false
-        }
+        // return ctx.body={
+        //     success:false
+        // }
+        return ctx.throw(400,`article get error`);
     }
 
     // console.log(result)
@@ -101,23 +111,25 @@ let articlePostAction = async function (ctx,next){
     obj['acticle_read_times'] = 0;
     obj['is_good'] = false;
     obj['is_top'] = false;
-    let ss
+    let result
     if( obj['article_title']===''||obj['article_content']===''){
-        ctx.response.status=500;
+        // return ctx.response.status=500;
+        return ctx.throw(500,`error article title or article content`)
     }
 
     try{
-         ss= await articleM.create(obj)
+        result= await articleM.create(obj)
         return ctx.body={
             success:true,
-            article_id:ss._id
+            article_id:result._id
         }
     }catch(e){
-           log.error(e)
-        return ctx.body = {
-            success:false,
-            errormessage: '新增失败'
-        }
+        log.error(e)
+        // return ctx.body = {
+        //     success:false,
+        //     errormessage: '新增失败'
+        // }
+        return ctx.throw(400,`新增失败了`)
     }
 
     
@@ -135,9 +147,9 @@ let articleDeleteAction = async function (ctx,next){
     token = ctx._tokens
 
     try{
-        let ss = await userM.findOne({'_id':token._id})
-        let ee = await articleM.find({'_id':article_id,'user_id':token._id})
-        if(ss['is_admin']||ee.length>0){
+        let userResult = await userM.findOne({'_id':token._id})
+        let articleResult = await articleM.find({'_id':article_id,'user_id':token._id})
+        if(userResult['is_admin']||articleResult.length>0){
             let result = await articleM.remove({'_id':article_id,'user_id':token._id})
             if(result['result']['ok']&&result['result']['n']){
                 return ctx.body={
@@ -145,25 +157,23 @@ let articleDeleteAction = async function (ctx,next){
                 }
             }
         }else{
-            return ctx.response.status = 401;
+            // return ctx.response.status = 401;
+            return ctx.throw(401,`not enought power`)
         }
     }catch(e){
-        console.log(e)
+        // console.log(e)
+        log.error(e)
         return ctx.body={
             success:false,
             errormessage:'删除失败'
         }
     }
-    return ctx.body={
-        success:true
-    }
 }
 let articlePutAction = async function (ctx,next){
     const body = ctx.request.body;
-    let token,userid,replyid;
-    token = ctx._tokens
+    let token = ctx._tokens;
     let _id = ctx.params.id||'';
-    if(_id===''){
+    if( _id === '' ){
         return ctx.body={
             success:false,
             errormessage: '参数错误'
@@ -179,12 +189,11 @@ let articlePutAction = async function (ctx,next){
         is_good:false,
         is_top:false
     }
-    let result
-    let ss
+    let articleResult
     try{
-        result = await articleM.findOne({_id});
-        if(result['user_id']===obj['user_id']){
-            ss= await articleM.update({'_id':_id},obj)
+        articleResult = await articleM.findOne({_id});
+        if(articleResult['user_id']===obj['user_id']){
+            await articleM.update({'_id':_id},obj)
         }
     }catch(e){
         // log.error(e)
