@@ -22,6 +22,7 @@ let collectionAddAction = async function(ctx,next){
         }
     }catch(e){
         log.error(e);
+        // console.log(e);
         return ctx.body={
             success:false,
             errormessage:'收藏失败'
@@ -46,7 +47,7 @@ let collectionAddAction = async function(ctx,next){
             //     success:false,
             //     errormessage:'已经收藏了'
             // }
-            return ctx.throw(400,'eror')
+            return ctx.throw(400,'error !! you already collection this article')
         }
         let suc = await collection.create(obj);
         
